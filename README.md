@@ -14,7 +14,7 @@ The contact form with the default values. No other CSS inside the page.
 
 ![default](./images/Contact_Form_1.jpg)
 
-The contact form with custom settings. The fonts are taken from your CSS of the page. Here with Bootstrap CSS.
+The contact form with custom settings. The fonts are taken from the CSS file of the page. Here with Bootstrap CSS.
 
 ![default](./images/Contact_Form_2.jpg)
 
