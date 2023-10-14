@@ -77,22 +77,22 @@ The list of all attributes:
 - `invalid-mail` => Warning text if the mail address is not correct
 - `mail-path` => relative path to the `contact-form.php` file (see 4. Step)
 
-Example for all attributes:
+Example for all attributes (default values):
 
 ```html
 <contact-form
-  bg-color="#424242"
-  text-color="#ffffff"
+  bg-color="#f7f7f7"
+  text-color="#262626"
   contact-title="Contact"
   contact-subtitle=""
-  name-placeholder="Name"
-  mail-placeholder="eMail"
+  name-placeholder="Your name"
+  mail-placeholder="Your eMail"
   subject-placeholder="Subject"
-  message-placeholder="Message"
-  btn-color="#9e1a1a"
+  message-placeholder="Your message"
+  btn-color="#d6d6d6"
   btn-text="Send"
-  btn-text-color="#ffffff"
-  success-message="Your message has been sent."
+  btn-text-color="#262626"
+  success-message="Thank you! Your message has been sent."
   error-message="Something went wrong. The mail could not be sent."
   mail-signature="A Message from my-domain.com"
   invalid-mail="Invalid mail address"
