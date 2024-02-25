@@ -39,7 +39,7 @@ if ($received_data->action === 'send-email') {
   $from = "From: ";
   $from .= $name;
   $from .= " <";
-  $from .= $mail;
+  $from .= $receiver;
   $from .= ">\n";
   $from .= "Reply-To: ";
   $from .= $mail;
