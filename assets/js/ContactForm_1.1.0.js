@@ -340,7 +340,6 @@
         if (this.getAttribute('layout-name') === 'icons') {
           this.#isIcon = true;
           template.innerHTML = iconsDesign;
-          // this.#defaultSettings.bgColor = 'transparent';
         } else {
           template.innerHTML = defaultDesign;
         }
