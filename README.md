@@ -8,15 +8,27 @@ The contact form can be customized.
 
 The repo includes all necessary files and shows examples how to include the contact form.
 
+### Multiple contact forms
+
+It is possible to display several contact forms on one page. They are completely independent of each other.
+
 ## Preview
 
-The contact form with the default values. No other CSS inside the page.
+The contact form with the default values and the `default` layout. **No other CSS inside the page**.
 
 ![default](./images/Contact_Form_1.jpg)
 
-The contact form with custom settings. The fonts are taken from the CSS file of the page. Here with Bootstrap CSS.
+The contact form with the default values and the `icons` layout. **No other CSS inside the page**.
+
+![default](./images/Contact_Form_3.jpg)
+
+The contact form with custom settings and the `default` layout. The fonts are taken from the CSS file of the page.
 
 ![default](./images/Contact_Form_2.jpg)
+
+The contact form with custom settings and the `icons` layout. The fonts are taken from the CSS file of the page.
+
+![default](./images/Contact_Form_4.jpg)
 
 ## Description
 
@@ -26,7 +38,7 @@ Download or clone the repo and add the two files `contact-form.php` and `Contact
 
 #### 2. Step - implementation
 
-Include the `ContactForm.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/ContactForm.js"></script>`.
+Include the `ContactForm_1.1.0.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/ContactForm_1.1.0.js" defer></script>` in the `<head>`-Tag.
 
 #### 3. Step - your mail address
 
@@ -60,8 +72,13 @@ See for more the examples in the `index.html` file.
 
 The list of all attributes:
 
+- `layout-name` => set the layout. There is a choice of `default` (does not have to be set) and `icons`.
+- `container-padding` => padding for the contact form. Default: `20px`. Set `container-padding="0"` for no padding.
 - `bg-color` => background color of the contact form
+- `bg-border` => border of the background
+- `bg-border-radius` => border radius of the background
 - `text-color` => color of the title and subtitle text
+- `text-align` => set text the `contact-title` and `contact-subtitle` to `center`, `left` or `right`
 - `contact-title` => text of the title. If it is an empty string nothing will be displayed
 - `contact-subtitle` => text of the subtitle. If it is an empty string nothing will be displayed
 - `name-placeholder` => Text in the name input field
@@ -71,31 +88,42 @@ The list of all attributes:
 - `btn-color` => background color of the submit button
 - `btn-text` => text of the submit button
 - `btn-text-color` => color of the submit button text
+- `btn-align` => set the button `center`, `left` or `right`
 - `success-message` => text if the message was sent successfully
 - `error-message` => text if the message was NOT sent successfully
-- `mail-signature` => Signature at the end of the mail
+- `mail-signature` => Signature at the end of the mail. **The host name is automatically used.**
 - `invalid-mail` => Warning text if the mail address is not correct
 - `mail-path` => relative path to the `contact-form.php` file (see 4. Step)
+- `icon-color` => color for the icons, **if you use the `layout-name`-Attribute `icons`**
+- `bg-color-icons` => bockground color for the icons, **if you use the `layout-name`-Attribute `icons`**
 
 Example for all attributes (default values):
 
 ```html
 <contact-form
+  layout-name="default"
+  container-padding="20px"
   bg-color="#f7f7f7"
+  bg-border="1px solid #ced4da"
+  bg-border-radius="0.25rem"
   text-color="#262626"
+  text-align="center"
   contact-title="Contact"
   contact-subtitle=""
   name-placeholder="Your name"
-  mail-placeholder="Your eMail"
+  mail-placeholder="Your Email address"
   subject-placeholder="Subject"
   message-placeholder="Your message"
   btn-color="#d6d6d6"
   btn-text="Send"
   btn-text-color="#262626"
+  btn-align="left"
   success-message="Thank you! Your message has been sent."
   error-message="Something went wrong. The mail could not be sent."
-  mail-signature="A Message from my-domain.com"
+  mail-signature="A Message from [host name]"
   invalid-mail="Invalid mail address"
+  icon-color="inherit"
+  bg-color-icons="#e9ecef"
 >
 </contact-form>
 ```

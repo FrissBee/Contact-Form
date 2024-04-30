@@ -13,13 +13,14 @@
       crossorigin="anonymous"
     /> -->
 
-    <!-- Implement the ContactForm.js file -->
-    <script src="./assets/js/ContactForm_1.0.0.js"></script>
+    <!-- Implement the ContactForm_1.1.0.js file -->
+    <script src="./assets/js/ContactForm_1.1.0.js" defer></script>
 
-    <!-- Only for this demo -->
+    <!-- For this demo -->
     <style>
       body {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
       }
       .container {
         max-width: 900px;
@@ -32,41 +33,64 @@
       hr {
         margin: 40px 0;
       }
+      code {
+        color: red;
+        background-color: rgb(233, 233, 233);
+        padding: 0 4px;
+        border-radius: 4px;
+      }
     </style>
   </head>
+
   <body>
     <main>
       <div class="container">
         <section>
           <h2>Contact Form</h2>
+          <div>
+            <small>
+              Created by
+              <a href="https://frissbee.de/" target="_blank" rel="noopener noreferrer">FrissBee.de</a>
+            </small>
+          </div>
           <p>See the files for more information.</p>
           <!-- ============================================
             Default 
             => The contact form is displayed with the default values.
           ============================================ -->
           <hr />
-          <h3>Default</h3>
+          <h3>Layout <code>default</code> with default attribute values</h3>
           <contact-form></contact-form>
+          <!-- ============================================
+            Icons
+            => The contact form is displayed with the default values.
+          ============================================ -->
+          <hr />
+          <h3>Layout <code>icons</code> with default attribute values</h3>
+          <contact-form layout-name="icons"></contact-form>
           <!-- ============================================
             Changing some attributes 
             => Only the desired attributes can be changed. All others get the default value.
           ============================================ -->
           <hr />
-          <h3>Changing some attributes</h3>
+          <h3>Layout <code>default</code> with changing some attributes</h3>
           <contact-form
             bg-color="#1b669b"
             text-color="#eaeaea"
+            text-align="right"
             btn-color="#289310"
             btn-text-color="#eaeaea"
+            btn-align="center"
           ></contact-form>
           <!-- ============================================
             Changing all attributes
           ============================================ -->
           <hr />
-          <h3>Changing all attributes</h3>
+          <h3>Layout <code>default</code> with changing all attributes</h3>
           <contact-form
             bg-color="#424242"
             text-color="#ffffff"
+            text-align="left"
             contact-title="Contact us"
             contact-subtitle="Write me something."
             name-placeholder="Name"
@@ -84,17 +108,17 @@
           </contact-form>
           <!-- ============================================
             Default with the path to the "contact-form.php" file
-            => If you want to specify the path in the HTML tag and not in the ContactForm.js file.
+            => If you want to specify the path in the HTML tag and not in the ContactForm_1.1.0.js file.
           ============================================ -->
           <hr />
-          <h3>Default with the path to the "contact-form.php" file</h3>
+          <h3>Layout <code>default</code> with the path to the "contact-form.php" file</h3>
           <contact-form mail-path="./inc/contact-form.php"></contact-form>
           <!-- ============================================
             Changing the attributes with JavaScript
             => See below
           ============================================ -->
           <hr />
-          <h3>Changing the attributes with JavaScript</h3>
+          <h3>Layout <code>icons</code> with changing the attributes with JavaScript</h3>
           <contact-form class="demo"></contact-form>
         </section>
       </div>
@@ -105,9 +129,17 @@
       // Select the Contact Form...
       const demoContactForm = document.querySelector('contact-form.demo');
       // ... and set the attribute(s) with the "setAttribute()" method.
-      demoContactForm.setAttribute('bg-color', '#8e8615');
-      demoContactForm.setAttribute('text-color', '#ffffff');
+      demoContactForm.setAttribute('text-color', '#a61616');
+      demoContactForm.setAttribute('bg-color', 'transparent');
+      demoContactForm.setAttribute('btn-color', '#a61616');
+      demoContactForm.setAttribute('btn-text-color', '#ffffff');
       demoContactForm.setAttribute('contact-subtitle', 'We are looking forward to your message.');
+      demoContactForm.setAttribute('container-padding', '0'); // no padding (default: 20px)
+      demoContactForm.setAttribute('layout-name', 'icons');
+      demoContactForm.setAttribute('icon-color', '#a61616');
+      demoContactForm.setAttribute('bg-color-icons', '#e3e3e3');
+      demoContactForm.setAttribute('bg-border', '0');
+      demoContactForm.setAttribute('bg-border-radius', '0');
       // ... and so on...
     </script>
   </body>

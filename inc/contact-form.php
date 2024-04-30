@@ -8,8 +8,7 @@ if(!isset($_POST) || $received_data === null || $received_data->action !== 'send
   exit;
 }
 
-function cleanUpCode($input, $encoding = 'UTF-8')
-{
+function cleanUpCode($input, $encoding = 'UTF-8'){
   return htmlspecialchars(
     strip_tags($input),
     ENT_QUOTES | ENT_HTML5,
@@ -30,21 +29,15 @@ if ($received_data->action === 'send-email') {
   }
 
   // $receiver => insert here your email address:
-  $receiver = "your mail address here";
+  $receiver = "your email address here";
   $name = cleanUpCode($name);
   $mail = cleanUpCode($mail);
   $subject = cleanUpCode($subject);
   $message = nl2br(cleanUpCode($message));
 
-  $from = "From: ";
-  $from .= $name;
-  $from .= " <";
-  $from .= $receiver;
-  $from .= ">\n";
-  $from .= "Reply-To: ";
-  $from .= $mail;
-  $from .= "\n";
-  $from .= "Content-Type: text/html\n";
+  $from = "From: " . $name . " <" . $receiver . ">\n";
+  $from .= "Reply-To: " . $mail . "\n";
+  $from .= "Content-Type: text/html;charset=UTF-8\n";
   $text = $message . $sendFrom;
   $success = mail($receiver, $subject, $text, $from);
 
