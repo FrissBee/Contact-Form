@@ -369,10 +369,8 @@
 
     #setDefaultSettings() {
       this.#DOM.sectionContactForm.style.backgroundColor = this.#defaultSettings.bgColor;
-
       this.#DOM.sectionContactForm.style.border = this.#defaultSettings.bgBorder;
       this.#DOM.sectionContactForm.style.borderRadius = this.#defaultSettings.bgBorderRadius;
-
       this.#DOM.title.style.color = this.#defaultSettings.textColor;
       this.#DOM.subtitle.style.color = this.#defaultSettings.textColor;
       this.#DOM.title.style.textAlign = this.#defaultSettings.textAlign;
