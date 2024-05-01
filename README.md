@@ -111,7 +111,7 @@ For example, change the background color:
 
 See for more the examples in the `index.html` file.
 
-The list of all attributes:
+**The list of all attributes:**
 
 - `layout-name` => set the layout. There is a choice of `default` (does not have to be set) and `icons`.
 - `container-padding` => padding for the contact form. Default: `20px`. Set `container-padding="0"` for no padding.
@@ -138,7 +138,7 @@ The list of all attributes:
 - `icon-color` => color for the icons, **if you use the `layout-name`-Attribute `icons`**
 - `bg-color-icons` => bockground color for the icons, **if you use the `layout-name`-Attribute `icons`**
 
-Example for all attributes (default values):
+**Example for all attributes (default values):**
 
 ```html
 <contact-form
