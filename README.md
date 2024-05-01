@@ -30,6 +30,43 @@ The contact form with custom settings and the `icons` layout. The fonts are take
 
 ![default](./images/Contact_Form_4.jpg)
 
+## Quick view
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+
+    <!-- 1. Implement the "ContactForm_1.1.0.js" file -->
+    <!-- Note: use "defer" -->
+    <script src="./assets/js/ContactForm_1.1.0.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- 2a. Layout "default" => default values -->
+      <contact-form></contact-form>
+
+      <!-- 2b. Layout "icons" => default values -->
+      <contact-form layout-name="icons"></contact-form>
+
+      <!-- 2c. Layout "default" => changing some attributes -->
+      <contact-form
+        bg-color="#1b669b"
+        text-color="#eaeaea"
+        text-align="left"
+        btn-color="#289310"
+        btn-text-color="#eaeaea"
+        btn-align="center"
+      ></contact-form>
+    </main>
+  </body>
+</html>
+```
+
 ## Description
 
 #### 1. Step - download and add
