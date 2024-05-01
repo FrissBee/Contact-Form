@@ -32,6 +32,10 @@ The contact form with custom settings and the `icons` layout. The fonts are take
 
 ## Quick view
 
+For your project you need the `ContactForm_1.1.0.js` file and `the contact-form.php` file.
+
+Here is an example of how to integrate the contact form into your HTML / PHP page.
+
 ```html
 <!DOCTYPE html>
 <html lang="de">
