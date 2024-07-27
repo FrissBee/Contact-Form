@@ -99,11 +99,11 @@
       color: green;
     }
 
-    .error-message{
+    .error-message {
       color: red;
     }
 
-    .invalid-mail{
+    .invalid-mail {
       color: red;
       font-style: italic;
       background-color: #ffffff;
@@ -251,6 +251,10 @@
       containerPadding: '20px',
       iconFill: 'inherit',
       bgColorIcons: '#e9ecef',
+      textName: '',
+      textEmail: '',
+      textSubject: '',
+      textMessage: '',
     };
     #root = null;
     #DOM = {};
@@ -306,6 +310,10 @@
         'container-padding',
         'icon-color',
         'bg-color-icons',
+        'text-name',
+        'text-email',
+        'text-subject',
+        'text-message',
       ];
     }
 
@@ -333,6 +341,10 @@
       else if (name === 'container-padding') this.#DOM.sectionContactForm.style.padding = newValue;
       else if (name === 'icon-color') this.#setColorIcons(newValue);
       else if (name === 'bg-color-icons') this.#setContainerBgColorIcons(newValue);
+      else if (name === 'text-name') this.#DOM.inputName.value = newValue;
+      else if (name === 'text-email') this.#DOM.inputEmail.value = newValue;
+      else if (name === 'text-subject') this.#DOM.inputSubject.value = newValue;
+      else if (name === 'text-message') this.#DOM.inputMessage.value = newValue;
     }
 
     #setLayout() {
@@ -365,6 +377,10 @@
         this.#DOM.svgIcons = this.#root.querySelectorAll('svg.icon-style');
         this.#DOM.iconContainer = this.#root.querySelectorAll('.icon-container');
       }
+      this.#DOM.inputName = this.#root.querySelector('[name="name"]');
+      this.#DOM.inputEmail = this.#root.querySelector('[name="email"]');
+      this.#DOM.inputSubject = this.#root.querySelector('[name="subject"]');
+      this.#DOM.inputMessage = this.#root.querySelector('[name="message"]');
     }
 
     #setDefaultSettings() {
@@ -391,6 +407,10 @@
       this.#DOM.sectionContactForm.style.padding = this.#defaultSettings.containerPadding;
       this.#setColorIcons(this.#defaultSettings.iconFill);
       this.#setContainerBgColorIcons(this.#defaultSettings.bgColorIcons);
+      this.#DOM.inputName.value = this.#defaultSettings.textName;
+      this.#DOM.inputEmail.value = this.#defaultSettings.textEmail;
+      this.#DOM.inputSubject.value = this.#defaultSettings.textSubject;
+      this.#DOM.inputMessage.value = this.#defaultSettings.textMessage;
     }
 
     #setColorIcons(newValue) {

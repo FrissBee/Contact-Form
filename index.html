@@ -14,7 +14,7 @@
     /> -->
 
     <!-- Implement the ContactForm_1.1.0.js file -->
-    <script src="./assets/js/ContactForm_1.1.0.js" defer></script>
+    <script src="./assets/js/ContactForm_1.2.0.js" defer></script>
 
     <!-- For this demo -->
     <style>
@@ -120,6 +120,17 @@
           <hr />
           <h3>Layout <code>icons</code> with changing the attributes with JavaScript</h3>
           <contact-form class="demo"></contact-form>
+          <!-- ============================================
+            Set the values of the input fields
+          ============================================ -->
+          <hr />
+          <h3>Layout <code>default</code> with setting of the input fields</h3>
+          <contact-form
+            text-name="Name of the sender"
+            text-email="email@sender.com"
+            text-subject="Subject for the receiver"
+            text-message="Message for the receiver"
+          ></contact-form>
         </section>
       </div>
     </main>

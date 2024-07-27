@@ -32,7 +32,7 @@ The contact form with custom settings and the `icons` layout. The fonts are take
 
 ## Quick view
 
-For your project you need the `ContactForm_1.1.0.js` file and `the contact-form.php` file.
+For your project you need the `ContactForm_1.2.0.js` file and `the contact-form.php` file.
 
 Here is an example of how to integrate the contact form into your HTML / PHP page.
 
@@ -44,9 +44,9 @@ Here is an example of how to integrate the contact form into your HTML / PHP pag
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
 
-    <!-- 1. Implement the "ContactForm_1.1.0.js" file -->
+    <!-- 1. Implement the "ContactForm_1.2.0.js" file -->
     <!-- Note: use "defer" -->
-    <script src="./assets/js/ContactForm_1.1.0.js" defer></script>
+    <script src="./assets/js/ContactForm_1.2.0.js" defer></script>
   </head>
 
   <body>
@@ -79,7 +79,7 @@ Download or clone the repo and add the two files `contact-form.php` and `Contact
 
 #### 2. Step - implementation
 
-Include the `ContactForm_1.1.0.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/ContactForm_1.1.0.js" defer></script>` in the `<head>`-Tag.
+Include the `ContactForm_1.2.0.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/ContactForm_1.2.0.js" defer></script>` in the `<head>`-Tag.
 
 #### 3. Step - your mail address
 
@@ -137,6 +137,10 @@ See for more the examples in the `index.html` file.
 - `mail-path` => relative path to the `contact-form.php` file (see 4. Step)
 - `icon-color` => color for the icons, **if you use the `layout-name`-Attribute `icons`**
 - `bg-color-icons` => bockground color for the icons, **if you use the `layout-name`-Attribute `icons`**
+- `text-name` => Text for the input field of the name
+- `text-email` => Text for the input field of the email address
+- `text-subject` => Text for the input field of the subject
+- `text-message` => Text for the input field of the message
 
 **Example for all attributes (default values):**
 
@@ -165,6 +169,10 @@ See for more the examples in the `index.html` file.
   invalid-mail="Invalid mail address"
   icon-color="inherit"
   bg-color-icons="#e9ecef"
+  text-name=""
+  text-email=""
+  text-subject=""
+  text-message=""
 >
 </contact-form>
 ```
