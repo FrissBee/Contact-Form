@@ -14,7 +14,8 @@
     /> -->
 
     <!-- Implement the ContactForm_1.1.0.js file -->
-    <script src="./assets/js/ContactForm_1.2.0.js" defer></script>
+    <script src="./assets/js/ContactForm_1.3.0.js" defer></script>
+    <script src="./assets/js/my-javascript.js" defer></script>
 
     <!-- For this demo -->
     <style>
@@ -115,11 +116,11 @@
           <contact-form mail-path="./inc/contact-form.php"></contact-form>
           <!-- ============================================
             Changing the attributes with JavaScript
-            => See below
+            => See the "my-javascript.js" file
           ============================================ -->
           <hr />
           <h3>Layout <code>icons</code> with changing the attributes with JavaScript</h3>
-          <contact-form class="demo"></contact-form>
+          <contact-form class="demo" layout-name="icons"></contact-form>
           <!-- ============================================
             Set the values of the input fields
           ============================================ -->
@@ -131,27 +132,30 @@
             text-subject="Subject for the receiver"
             text-message="Message for the receiver"
           ></contact-form>
+          <!-- ============================================
+            With subject field as input:select
+          ============================================ -->
+          <hr />
+          <h3>Layout <code>default</code> with subject field as <code>input:select</code></h3>
+          <p>Look in the console when you change the "subject select".</p>
+          <contact-form class="input-select" subject-field="select"></contact-form>
+          <!-- ============================================
+            Layout "icon" with subject field as input:select
+          ============================================ -->
+          <hr />
+          <h3>
+            Layout <code>icons</code> with default attribute values and subject field as <code>input:select</code>
+          </h3>
+          <p>Look in the console when you change the "subject select".</p>
+          <contact-form
+            class="input-select-icon"
+            subject-field="select"
+            layout-name="icons"
+            icon-color="#af1818"
+            bg-color-icons="#ebf4ff"
+          ></contact-form>
         </section>
       </div>
     </main>
-    <script>
-      'use strict';
-
-      // Select the Contact Form...
-      const demoContactForm = document.querySelector('contact-form.demo');
-      // ... and set the attribute(s) with the "setAttribute()" method.
-      demoContactForm.setAttribute('text-color', '#a61616');
-      demoContactForm.setAttribute('bg-color', 'transparent');
-      demoContactForm.setAttribute('btn-color', '#a61616');
-      demoContactForm.setAttribute('btn-text-color', '#ffffff');
-      demoContactForm.setAttribute('contact-subtitle', 'We are looking forward to your message.');
-      demoContactForm.setAttribute('container-padding', '0'); // no padding (default: 20px)
-      demoContactForm.setAttribute('layout-name', 'icons');
-      demoContactForm.setAttribute('icon-color', '#a61616');
-      demoContactForm.setAttribute('bg-color-icons', '#e3e3e3');
-      demoContactForm.setAttribute('bg-border', '0');
-      demoContactForm.setAttribute('bg-border-radius', '0');
-      // ... and so on...
-    </script>
   </body>
 </html>

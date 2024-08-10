@@ -10,20 +10,9 @@
       margin-inline-end: 0px;
       font-weight: normal;
     }
-
-    .border {
-      border: 1px solid #ced4da;
-    }
-
-    .border-radius {
-      border-radius: 0.25rem;
-    }
-    
-    .border-radius-right {
-      border-top-right-radius: 0.25rem;
-      border-bottom-right-radius: 0.25rem;
-    }
-
+    .border { border: 1px solid #ced4da; }
+    .border-radius { border-radius: 0.25rem; }
+    .border-radius-right { border-top-right-radius: 0.25rem;border-bottom-right-radius: 0.25rem;}
     .section-contact-form {
       position: relative;
       width: 100%;
@@ -32,7 +21,6 @@
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
     }
-
     .input-style {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -49,16 +37,29 @@
       font-family: inherit;
       font-weight: normal;
     }
-
-    .input-style:focus {
-      outline: 2px solid #84d1f4;
-    }
-
-    textarea {
-      resize: vertical;
+    .form-select {
+      display: block;
+      padding: 0.375rem 0.75rem;
+      -moz-padding-start: calc(0.75rem - 3px);
+      font-size: 1.2rem;
       font-family: inherit;
+      line-height: 1.5;
+      color: #212529;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right .75rem center;
+      background-size: 16px 12px;
+      border: 1px solid #ced4da;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 100%;
     }
-
+    .form-control:focus, .form-select:focus { outline: 2px solid #84d1f4; }
+    .input-style:focus {outline: 2px solid #84d1f4;}
+    textarea { resize: vertical;font-family: inherit;}
     button.btn-submit {
       display: inline-block;
       font-weight: inherit;
@@ -77,15 +78,8 @@
       font-size: inherit;
       font-family: inherit;
     }
-
-    button:hover {
-      opacity: .8;
-    }
-
-    .margin-bottom {
-      margin-bottom: 10px;
-    }
-
+    button:hover { opacity: .8; }
+    .margin-bottom { margin-bottom: 10px; }
     .success-message, .error-message {
       text-align: center;
       color: green;
@@ -94,15 +88,8 @@
       margin-top: 20px;
       padding: 8px 0;
     }
-
-    .success-message {
-      color: green;
-    }
-
-    .error-message {
-      color: red;
-    }
-
+    .success-message { color: green; }
+    .error-message { color: red; }
     .invalid-mail {
       color: red;
       font-style: italic;
@@ -111,24 +98,10 @@
       margin-top: 4px;
       margin-bottom: 8px;
     }
-
-    .display-block {
-      display: block;
-    }
-
-    .display-none {
-      display: none;
-    }
-
-    .icon-style {
-      width: 20px;
-      height: 20px;
-    }
-
-    .d-flex {
-      display: flex;
-    }
-
+    .display-block { display: block; }
+    .display-none { display: none; }
+    .icon-style { width: 20px;height: 20px; }
+    .d-flex { display: flex; }
     .icon-container {
       border-top-left-radius: 0.25rem;
       border-bottom-left-radius: 0.25rem;
@@ -141,7 +114,10 @@
       -webkit-box-align: center;
       display: -webkit-box;
     }
+    .font-weight-bold { font-weight: bold; }
   </style>`;
+
+  const iconSubject = /* html */ `<div class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" class="icon-style" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg></div>`;
 
   const defaultHTML = /* html */ `
   <section class="section-contact-form">
@@ -159,15 +135,15 @@
         <input part="input-tag" type="email" class="input-style border border-radius input-email" name="email" placeholder="" required />
         <div class="invalid-mail border-radius display-none"></div>
       </div>
-      <div class="margin-bottom">
+      <div class="margin-bottom container-subject">
         <input part="input-tag" type="text" class="input-style border border-radius input-subject" name="subject" placeholder="" required />
       </div>
       <div class="margin-bottom">
         <textarea part="textarea-tag" class="input-style border border-radius input-message" name="message" placeholder="" rows="4" required></textarea>
       </div>
-      <div class="success-message border border-radius margin-bottom display-none">
+      <div class="success-message border border-radius margin-bottom font-weight-bold display-none">
       </div>
-      <div class="error-message border border-radius margin-bottom display-none">
+      <div class="error-message border border-radius margin-bottom font-weight-bold display-none">
       </div>
       <div class="container-btn-submit">
         <button part="button-tag" type="submit" class="border border-radius btn-submit"></button>
@@ -202,8 +178,8 @@
         </div>
         <div class="invalid-mail border-radius-right display-none"></div>
       </div>
-      <div class="margin-bottom d-flex">
-        <div class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" class="icon-style" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg></div>
+      <div class="margin-bottom d-flex container-subject">
+        ${iconSubject}
         <input part="input-tag" type="text" class="input-style border border-radius-right input-subject" name="subject" placeholder="" required />
       </div>
       <div class="margin-bottom d-flex">
@@ -264,9 +240,10 @@
       subject: '',
       message: '',
     };
-    #borderColor = '#ced4da';
     #requiredBorderColor = '2px solid #fc0505';
     #isIcon = false;
+    selectSubject = null;
+    #defaultBorder = '1px solid #ced4da';
 
     constructor() {
       super();
@@ -278,10 +255,27 @@
     }
 
     connectedCallback() {
-      this.#DOM.inputName.addEventListener('input', (e) => (this.#INPUTS.name = e.currentTarget.value));
-      this.#DOM.inputEmail.addEventListener('input', (e) => (this.#INPUTS.mail = e.currentTarget.value));
-      this.#DOM.inputSubject.addEventListener('input', (e) => (this.#INPUTS.subject = e.currentTarget.value));
-      this.#DOM.inputMessage.addEventListener('input', (e) => (this.#INPUTS.message = e.currentTarget.value));
+      this.#DOM.inputName.addEventListener('input', (e) => {
+        this.#INPUTS.name = e.currentTarget.value;
+        this.#DOM.inputName.style.border = this.#defaultBorder;
+      });
+
+      this.#DOM.inputEmail.addEventListener('input', (e) => {
+        this.#INPUTS.mail = e.currentTarget.value;
+        this.#DOM.inputEmail.style.border = this.#defaultBorder;
+        this.#showInvalidMail(false);
+      });
+
+      this.#DOM.inputSubject.addEventListener('input', (e) => {
+        this.#INPUTS.subject = e.currentTarget.value;
+        this.#DOM.inputSubject.style.border = this.#defaultBorder;
+      });
+
+      this.#DOM.inputMessage.addEventListener('input', (e) => {
+        this.#INPUTS.message = e.currentTarget.value;
+        this.#DOM.inputMessage.style.border = this.#defaultBorder;
+      });
+
       this.#DOM.btnSubmit.addEventListener('click', (e) => this.#onSendButton(e));
     }
 
@@ -314,6 +308,7 @@
         'text-email',
         'text-subject',
         'text-message',
+        'subject-field',
       ];
     }
 
@@ -345,6 +340,42 @@
       else if (name === 'text-email') this.#DOM.inputEmail.value = newValue;
       else if (name === 'text-subject') this.#DOM.inputSubject.value = newValue;
       else if (name === 'text-message') this.#DOM.inputMessage.value = newValue;
+      else if (name === 'subject-field') {
+        this.#DOM.containerSubject.innerHTML = this.#setSubjectToSelect();
+        this.#setIconColorBySelect();
+      }
+    }
+
+    setOptions(options) {
+      let optionsHTML = '';
+      options.forEach((option) => {
+        optionsHTML += /* html */ `<option value=${option.value}>${option.text}</option>`;
+      });
+      this.selectSubject = this.#DOM.containerSubject.querySelector('.input-subject');
+      this.selectSubject.innerHTML = optionsHTML;
+    }
+
+    #setSubjectToSelect() {
+      if (this.hasAttribute('layout-name') && this.getAttribute('layout-name') === 'icons') {
+        return /* html */ `${iconSubject}<select part="input-tag" type="text" class="form-select border border-radius-right input-subject" name="subject"></select>`;
+      } else {
+        return /* html */ `<select part="input-tag" type="text" class="form-select border border-radius input-subject" name="subject"></select>`;
+      }
+    }
+
+    #setIconColorBySelect() {
+      if (this.hasAttribute('layout-name') && this.getAttribute('layout-name') === 'icons') {
+        if (this.hasAttribute('icon-color')) {
+          this.#DOM.containerSubject.querySelector('svg').style.fill = this.getAttribute('icon-color');
+        }
+        if (this.hasAttribute('bg-color-icons')) {
+          this.#DOM.containerSubject.querySelector('.icon-container').style.backgroundColor =
+            this.getAttribute('bg-color-icons');
+        } else {
+          this.#DOM.containerSubject.querySelector('.icon-container').style.backgroundColor =
+            this.#defaultSettings.bgColorIcons;
+        }
+      }
     }
 
     #setLayout() {
@@ -366,6 +397,7 @@
       this.#DOM.subtitle = this.#root.querySelector('.contact-subtitle');
       this.#DOM.inputName = this.#root.querySelector('.input-name');
       this.#DOM.inputEmail = this.#root.querySelector('.input-email');
+      this.#DOM.containerSubject = this.#root.querySelector('.container-subject');
       this.#DOM.inputSubject = this.#root.querySelector('.input-subject');
       this.#DOM.inputMessage = this.#root.querySelector('.input-message');
       this.#DOM.btnSubmit = this.#root.querySelector('.btn-submit');
@@ -429,7 +461,12 @@
     async #sendMail() {
       const name = this.#INPUTS.name;
       const email = this.#INPUTS.mail;
-      const subject = this.#INPUTS.subject;
+      let subject = '';
+      if (this.hasAttribute('subject-field')) {
+        subject = this.selectSubject.value.replaceAll('%20', ' ');
+      } else {
+        subject = this.#INPUTS.subject;
+      }
       const message = this.#INPUTS.message;
       const mailSignature = this.#defaultSettings.mailSignature;
       const checkValues = this.#checkAllInputsValues();
@@ -455,7 +492,6 @@
           .then((response) => {
             if (response === true) {
               this.#clearAllInputsValues();
-              this.#clearAllInputsBorders();
               this.#resetINPUTS();
               this.#showInvalidMail(false);
               this.#DOM.successMessage.classList.add('display-block');
@@ -473,23 +509,24 @@
     }
 
     #checkAllInputsValues() {
-      this.#clearAllInputsBorders();
       this.#showInvalidMail(false);
       this.#showErrorMessage(false);
       let checked = true;
 
       if (this.#INPUTS.name.trim() === '') {
-        this.#DOM.inputName.style.outline = this.#requiredBorderColor;
+        this.#DOM.inputName.style.border = this.#requiredBorderColor;
         checked = false;
       }
 
-      if (this.#INPUTS.subject.trim() === '') {
-        this.#DOM.inputSubject.style.outline = this.#requiredBorderColor;
-        checked = false;
+      if (!this.hasAttribute('subject-field')) {
+        if (this.#INPUTS.subject.trim() === '') {
+          this.#DOM.inputSubject.style.border = this.#requiredBorderColor;
+          checked = false;
+        }
       }
 
       if (this.#INPUTS.message.trim() === '') {
-        this.#DOM.inputMessage.style.outline = this.#requiredBorderColor;
+        this.#DOM.inputMessage.style.border = this.#requiredBorderColor;
         checked = false;
       }
 
@@ -510,13 +547,6 @@
       this.#DOM.inputMessage.value = '';
     }
 
-    #clearAllInputsBorders() {
-      this.#DOM.inputName.style.outline = this.#borderColor;
-      this.#DOM.inputEmail.style.outline = this.#borderColor;
-      this.#DOM.inputSubject.style.outline = this.#borderColor;
-      this.#DOM.inputMessage.style.outline = this.#borderColor;
-    }
-
     #resetINPUTS() {
       this.#INPUTS.name = '';
       this.#INPUTS.mail = '';
@@ -531,7 +561,7 @@
       } else {
         this.#DOM.invalidMail.classList.add('display-block');
         this.#DOM.invalidMail.classList.remove('display-none');
-        this.#DOM.inputEmail.style.outline = this.#requiredBorderColor;
+        this.#DOM.inputEmail.style.border = this.#requiredBorderColor;
       }
     }
 

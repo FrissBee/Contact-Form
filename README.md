@@ -32,7 +32,7 @@ The contact form with custom settings and the `icons` layout. The fonts are take
 
 ## Quick view
 
-For your project you need the `ContactForm_1.2.0.js` file and `the contact-form.php` file.
+For your project you need the `ContactForm_1.3.0.js` file and `the contact-form.php` file.
 
 Here is an example of how to integrate the contact form into your HTML / PHP page.
 
@@ -44,9 +44,9 @@ Here is an example of how to integrate the contact form into your HTML / PHP pag
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
 
-    <!-- 1. Implement the "ContactForm_1.2.0.js" file -->
+    <!-- 1. Implement the "ContactForm_1.3.0.js" file -->
     <!-- Note: use "defer" -->
-    <script src="./assets/js/ContactForm_1.2.0.js" defer></script>
+    <script src="./assets/js/ContactForm_1.3.0.js" defer></script>
   </head>
 
   <body>
@@ -75,11 +75,11 @@ Here is an example of how to integrate the contact form into your HTML / PHP pag
 
 #### 1. Step - download and add
 
-Download or clone the repo and add the two files `contact-form.php` and `ContactForm.js` into your project.
+Download or clone the repo and add the two files `contact-form.php` and `ContactForm_1.3.0.js` into your project.
 
 #### 2. Step - implementation
 
-Include the `ContactForm_1.2.0.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/ContactForm_1.2.0.js" defer></script>` in the `<head>`-Tag.
+Include the `ContactForm_1.3.0.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/ContactForm_1.3.0.js" defer></script>` in the `<head>`-Tag.
 
 #### 3. Step - your mail address
 
@@ -141,6 +141,7 @@ See for more the examples in the `index.html` file.
 - `text-email` => Text for the input field of the email address
 - `text-subject` => Text for the input field of the subject
 - `text-message` => Text for the input field of the message
+- `subject-field` => If the attribute is set with the value `select`, the subject field becomes a select field. The function `setOptions(options)` is required to set the `options`. See the last two examples, the `my-javascript.js` file and "The subject field as a `select` HTML element".
 
 **Example for all attributes (default values):**
 
@@ -176,6 +177,39 @@ See for more the examples in the `index.html` file.
 >
 </contact-form>
 ```
+
+You can set the default values in the `ContactForm_1.3.0.js` as you wish, so you don't have to set them in the `<contact form></contact form>` tag (again and again).
+
+### The subject field as a `select` HTML element
+
+The subject field can be used not only as `input:text`, but also as a `select` HTML tag in order to select certain predefined topics.
+
+Proceed as follows:
+
+1. Set the attribute `subject-field` with the value `select` in the `<contact form></contact form>` -tag.
+2. Select the `<contact form></contact form>` and pass it the list of options using the `setOptions()` method.
+
+Example:
+
+```js
+const demoSubjectSelect = document.querySelector('contact-form');
+
+// NOTE: whitespaces must be replaced with "%20"
+const options = [
+  { value: 'Option%20One', text: 'Option One' },
+  { value: 'Option%20Two', text: 'Option Two' },
+  { value: 'Option%20Three', text: 'Option Three' },
+];
+
+demoSubjectSelect.setOptions(options);
+
+// If the value of the `select`-tag is required outside, it can be read as follows:
+console.log(demoSubjectSelect.selectSubject.value);
+// Or set:
+demoSubjectSelect.selectSubject.value = 'Hardware%20problem';
+```
+
+See the last two examples and the `my-javascript.js` file.
 
 #### 7. Step - more CSS
 
