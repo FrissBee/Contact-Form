@@ -13,8 +13,8 @@
       crossorigin="anonymous"
     /> -->
 
-    <!-- Implement the ContactForm_1.1.0.js file -->
-    <script src="./assets/js/ContactForm_1.3.0.js" defer></script>
+    <!-- Implement the ContactForm_1.3.1.js file -->
+    <script src="./assets/js/ContactForm_1.3.1.js" defer></script>
     <script src="./assets/js/my-javascript.js" defer></script>
 
     <!-- For this demo -->
@@ -155,7 +155,6 @@
           ============================================ -->
           <hr />
           <h3>Layout <code>default</code> with subject field as <code>input:select</code></h3>
-          <p class="py-2">Look in the console when you change the "subject select".</p>
           <contact-form class="input-select" subject-field="select"></contact-form>
           <!-- ============================================
             Layout "icon" with subject field as input:select
@@ -164,13 +163,29 @@
           <h3>
             Layout <code>icons</code> with default attribute values and subject field as <code>input:select</code>
           </h3>
-          <p class="py-2">Look in the console when you change the "subject select".</p>
           <contact-form
             class="input-select-icon"
             subject-field="select"
             layout-name="icons"
             icon-color="#af1818"
             bg-color-icons="#ebf4ff"
+          ></contact-form>
+          <!-- ============================================
+            Layout "icon" with subject field as input:select
+          ============================================ -->
+          <hr />
+          <h3>
+            Layout <code>icons</code> with default attribute values and subject field as <code>input:select</code> and
+            with setting of the input fields
+          </h3>
+          <contact-form
+            class="input-select-icon-default"
+            subject-field="select"
+            layout-name="icons"
+            text-name="Name of the sender"
+            text-email="email@sender.com"
+            text-message="Message for the receiver"
+            text-subject="Software%20problem"
           ></contact-form>
         </section>
       </div>

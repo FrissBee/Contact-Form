@@ -336,11 +336,19 @@
       else if (name === 'container-padding') this.#DOM.sectionContactForm.style.padding = newValue;
       else if (name === 'icon-color') this.#setColorIcons(newValue);
       else if (name === 'bg-color-icons') this.#setContainerBgColorIcons(newValue);
-      else if (name === 'text-name') this.#DOM.inputName.value = newValue;
-      else if (name === 'text-email') this.#DOM.inputEmail.value = newValue;
-      else if (name === 'text-subject') this.#DOM.inputSubject.value = newValue;
-      else if (name === 'text-message') this.#DOM.inputMessage.value = newValue;
-      else if (name === 'subject-field') {
+      else if (name === 'text-name') {
+        this.#DOM.inputName.value = newValue;
+        this.#INPUTS.name = newValue;
+      } else if (name === 'text-email') {
+        this.#DOM.inputEmail.value = newValue;
+        this.#INPUTS.mail = newValue;
+      } else if (name === 'text-subject') {
+        this.#DOM.inputSubject.value = newValue;
+        this.#INPUTS.subject = newValue;
+      } else if (name === 'text-message') {
+        this.#DOM.inputMessage.value = newValue;
+        this.#INPUTS.message = newValue;
+      } else if (name === 'subject-field') {
         this.#DOM.containerSubject.innerHTML = this.#setSubjectToSelect();
         this.#setIconColorBySelect();
       }
@@ -353,6 +361,10 @@
       });
       this.selectSubject = this.#DOM.containerSubject.querySelector('.input-subject');
       this.selectSubject.innerHTML = optionsHTML;
+
+      if (this.hasAttribute('text-subject')) {
+        this.#DOM.containerSubject.querySelector('select.input-subject').value = this.getAttribute('text-subject');
+      }
     }
 
     #setSubjectToSelect() {

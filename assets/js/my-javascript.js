@@ -17,7 +17,7 @@ demoContactForm.setAttribute('bg-border-radius', '0');
 
 // With subject field as input:select
 const demoSubjectSelect = document.querySelector('.input-select');
-// NOTE: whitespaces must be replaced with "%20"
+// NOTE: whitespaces must be replaced with "%20" in the "value" key
 const options = [
   { value: 'IT%20support', text: 'IT support' },
   { value: 'Customer%20invoices', text: 'Customer invoices' },
@@ -28,16 +28,14 @@ demoSubjectSelect.setOptions(options);
 
 // Layout icons with subject field as input:select
 const demoSubjectSelectIcon = document.querySelector('.input-select-icon');
-const optionsIcon = [
-  { value: 'IT%20support', text: 'IT support' },
-  { value: 'Customer%20invoices', text: 'Customer invoices' },
-  { value: 'Hardware%20problem', text: 'Hardware problem' },
-  { value: 'Software%20problem', text: 'Software problem' },
-];
-demoSubjectSelectIcon.setOptions(optionsIcon);
+demoSubjectSelectIcon.setOptions(options);
 
 // If the value of the `select`-tag is required outside, it can be read as follows:
-console.log(demoSubjectSelectIcon.selectSubject.value);
+console.log('Output:', demoSubjectSelectIcon.selectSubject.value);
 
 // Or set:
 // demoSubjectSelectIcon.selectSubject.value = 'Hardware%20problem';
+
+// Layout default with icons with subject field as input:select and with setting of the input fields
+const demoSubjectSelectIconDefault = document.querySelector('.input-select-icon-default');
+demoSubjectSelectIconDefault.setOptions(options);
