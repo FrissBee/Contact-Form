@@ -29,7 +29,7 @@ if ($received_data->action === 'send-email') {
   }
 
   // $receiver => insert here your email address:
-  $receiver = "info@berndmerziger.de";
+  $receiver = "!!! here your email address !!!";
   $name = cleanUpCode($name);
   $mail = cleanUpCode($mail);
   $subject = cleanUpCode($subject);
