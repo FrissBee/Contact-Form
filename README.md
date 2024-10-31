@@ -32,7 +32,7 @@ The contact form with custom settings and the `icons` layout. The fonts are take
 
 ## Quick view
 
-For your project you need the `ContactForm_1.3.1.js` file and `the contact-form.php` file.
+For your project you need the `ContactForm_1.3.2.js` file and `the contact-form.php` file.
 
 Here is an example of how to integrate the contact form into your HTML / PHP page.
 
@@ -44,9 +44,9 @@ Here is an example of how to integrate the contact form into your HTML / PHP pag
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
 
-    <!-- 1. Implement the "ContactForm_1.3.1.js" file -->
+    <!-- 1. Implement the "ContactForm_1.3.2.js" file -->
     <!-- Note: use "defer" -->
-    <script src="./assets/js/ContactForm_1.3.1.js" defer></script>
+    <script src="./assets/js/ContactForm_1.3.2.js" defer></script>
   </head>
 
   <body>
@@ -75,11 +75,11 @@ Here is an example of how to integrate the contact form into your HTML / PHP pag
 
 #### 1. Step - download and add
 
-Download or clone the repo and add the two files `contact-form.php` and `ContactForm_1.3.1.js` into your project.
+Download or clone the repo and add the two files `contact-form.php` and `ContactForm_1.3.2.js` into your project.
 
 #### 2. Step - implementation
 
-Include the `ContactForm_1.3.1.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/ContactForm_1.3.1.js" defer></script>` in the `<head>`-Tag.
+Include the `ContactForm_1.3.2.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/ContactForm_1.3.2.js" defer></script>` in the `<head>`-Tag.
 
 #### 3. Step - your mail address
 
@@ -178,7 +178,7 @@ See for more the examples in the `index.html` file.
 </contact-form>
 ```
 
-You can set the default values in the `ContactForm_1.3.1.js` as you wish, so you don't have to set them in the `<contact form></contact form>` tag (again and again).
+You can set the default values in the `ContactForm_1.3.2.js` as you wish, so you don't have to set them in the `<contact form></contact form>` tag (again and again).
 
 ### The subject field as a `select` HTML element
 

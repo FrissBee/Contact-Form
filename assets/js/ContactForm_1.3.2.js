@@ -189,8 +189,8 @@
         </div>
         <textarea part="textarea-tag" class="input-style border border-radius-right input-message" name="message" placeholder="" rows="4" required></textarea>
       </div>
-      <div class="success-message border border-radius-right margin-bottom display-none"></div>
-      <div class="error-message border border-radius-right margin-bottom display-none"></div>
+      <div class="success-message border border-radius margin-bottom display-none"></div>
+      <div class="error-message border border-radius margin-bottom display-none"></div>
       <div class="container-btn-submit">
         <button part="button-tag" type="submit" class="border border-radius btn-submit"></button>
       </div>
@@ -262,7 +262,6 @@
 
       this.#DOM.inputEmail.addEventListener('input', (e) => {
         this.#INPUTS.mail = e.currentTarget.value;
-        this.#DOM.inputEmail.style.border = this.#defaultBorder;
         this.#showInvalidMail(false);
       });
 
@@ -314,41 +313,45 @@
 
     attributeChangedCallback(name, oldValue, newValue) {
       if (name === 'mail-path') this.#mailPath = newValue;
-      else if (name === 'bg-color') this.#DOM.sectionContactForm.style.backgroundColor = newValue;
-      else if (name === 'bg-border') this.#DOM.sectionContactForm.style.border = newValue;
-      else if (name === 'bg-border-radius') this.#DOM.sectionContactForm.style.borderRadius = newValue;
-      else if (name === 'text-color') this.#DOM.title.style.color = this.#DOM.subtitle.style.color = newValue;
-      else if (name === 'text-align') this.#DOM.title.style.textAlign = this.#DOM.subtitle.style.textAlign = newValue;
-      else if (name === 'contact-title') this.#DOM.title.textContent = newValue;
-      else if (name === 'contact-subtitle') this.#DOM.subtitle.textContent = newValue;
-      else if (name === 'name-placeholder') this.#DOM.inputName.placeholder = newValue;
-      else if (name === 'mail-placeholder') this.#DOM.inputEmail.placeholder = newValue;
-      else if (name === 'subject-placeholder') this.#DOM.inputSubject.placeholder = newValue;
-      else if (name === 'message-placeholder') this.#DOM.inputMessage.placeholder = newValue;
-      else if (name === 'btn-color') this.#DOM.btnSubmit.style.backgroundColor = newValue;
-      else if (name === 'btn-text') this.#DOM.btnSubmit.textContent = newValue;
-      else if (name === 'btn-text-color') this.#DOM.btnSubmit.style.color = newValue;
-      else if (name === 'success-message') this.#DOM.successMessage.textContent = newValue;
-      else if (name === 'error-message') this.#DOM.errorMessage.textContent = newValue;
-      else if (name === 'mail-signature') this.#defaultSettings.mailSignature = newValue;
-      else if (name === 'invalid-mail') this.#DOM.invalidMail.textContent = newValue;
-      else if (name === 'btn-align') this.#DOM.containerBtnSubmit.style.textAlign = newValue;
-      else if (name === 'container-padding') this.#DOM.sectionContactForm.style.padding = newValue;
-      else if (name === 'icon-color') this.#setColorIcons(newValue);
-      else if (name === 'bg-color-icons') this.#setContainerBgColorIcons(newValue);
-      else if (name === 'text-name') {
+      if (name === 'bg-color') this.#DOM.sectionContactForm.style.backgroundColor = newValue;
+      if (name === 'bg-border') this.#DOM.sectionContactForm.style.border = newValue;
+      if (name === 'bg-border-radius') this.#DOM.sectionContactForm.style.borderRadius = newValue;
+      if (name === 'text-color') this.#DOM.title.style.color = this.#DOM.subtitle.style.color = newValue;
+      if (name === 'text-align') this.#DOM.title.style.textAlign = this.#DOM.subtitle.style.textAlign = newValue;
+      if (name === 'contact-title') this.#DOM.title.textContent = newValue;
+      if (name === 'contact-subtitle') this.#DOM.subtitle.textContent = newValue;
+      if (name === 'name-placeholder') this.#DOM.inputName.placeholder = newValue;
+      if (name === 'mail-placeholder') this.#DOM.inputEmail.placeholder = newValue;
+      if (name === 'subject-placeholder') this.#DOM.inputSubject.placeholder = newValue;
+      if (name === 'message-placeholder') this.#DOM.inputMessage.placeholder = newValue;
+      if (name === 'btn-color') this.#DOM.btnSubmit.style.backgroundColor = newValue;
+      if (name === 'btn-text') this.#DOM.btnSubmit.textContent = newValue;
+      if (name === 'btn-text-color') this.#DOM.btnSubmit.style.color = newValue;
+      if (name === 'success-message') this.#DOM.successMessage.textContent = newValue;
+      if (name === 'error-message') this.#DOM.errorMessage.textContent = newValue;
+      if (name === 'mail-signature') this.#defaultSettings.mailSignature = newValue;
+      if (name === 'invalid-mail') this.#DOM.invalidMail.textContent = newValue;
+      if (name === 'btn-align') this.#DOM.containerBtnSubmit.style.textAlign = newValue;
+      if (name === 'container-padding') this.#DOM.sectionContactForm.style.padding = newValue;
+      if (name === 'icon-color') this.#setColorIcons(newValue);
+      if (name === 'bg-color-icons') this.#setContainerBgColorIcons(newValue);
+      if (name === 'text-name') {
         this.#DOM.inputName.value = newValue;
         this.#INPUTS.name = newValue;
-      } else if (name === 'text-email') {
+      }
+      if (name === 'text-email') {
         this.#DOM.inputEmail.value = newValue;
         this.#INPUTS.mail = newValue;
-      } else if (name === 'text-subject') {
+      }
+      if (name === 'text-subject') {
         this.#DOM.inputSubject.value = newValue;
         this.#INPUTS.subject = newValue;
-      } else if (name === 'text-message') {
+      }
+      if (name === 'text-message') {
         this.#DOM.inputMessage.value = newValue;
         this.#INPUTS.message = newValue;
-      } else if (name === 'subject-field') {
+      }
+      if (name === 'subject-field') {
         this.#DOM.containerSubject.innerHTML = this.#setSubjectToSelect();
         this.#setIconColorBySelect();
       }
@@ -570,6 +573,7 @@
       if (onOff === false) {
         this.#DOM.invalidMail.classList.add('display-none');
         this.#DOM.invalidMail.classList.remove('display-block');
+        this.#DOM.inputEmail.style.border = this.#defaultBorder;
       } else {
         this.#DOM.invalidMail.classList.add('display-block');
         this.#DOM.invalidMail.classList.remove('display-none');
