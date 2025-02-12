@@ -35,7 +35,7 @@ if ($received_data->action === 'send-email') {
   $subject = cleanUpCode($subject);
   $message = nl2br(cleanUpCode($message));
 
-  $from = "From: " . $name . " <" . $receiver . ">\n";
+  $from = "From: " . iconv("utf-8","ascii//TRANSLIT", $name) . " <" . $receiver . ">\n";
   $from .= "Reply-To: " . $mail . "\n";
   $from .= "Content-Type: text/html;charset=UTF-8\n";
   $text = $message . $sendFrom;
