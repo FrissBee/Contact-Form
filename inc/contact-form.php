@@ -24,12 +24,29 @@ if ($received_data->action === 'send-email') {
   $mailSignature = $received_data->mailSignature;
   $sendFrom = '';
 
+  // optional: 
+  // when you want to work with different sender addresses
+  // In this case, set the attribute `receiver-email` in the `contact-form` HTML tag with the corresponding value.
+  $receiverEmail = $received_data->receiverEmail;
+  if ($receiverEmail !== '') {
+
+    if ($receiverEmail === 'contact') {
+      // $receiver => insert here your email address:
+        $receiver = "!!! here your email address !!!";
+
+    } else {
+      $receiver = $receiverEmail;
+    }
+
+  } else {
+    // $receiver => insert here your email address:
+    $receiver = "!!! here your email address !!!";
+  }
+
   if($mailSignature !== ''){
     $sendFrom = "<br><br>---<br><small>" . $mailSignature . "</small>";
   }
 
-  // $receiver => insert here your email address:
-  $receiver = "!!! here your email address !!!";
   $name = cleanUpCode($name);
   $mail = cleanUpCode($mail);
   $subject = cleanUpCode($subject);

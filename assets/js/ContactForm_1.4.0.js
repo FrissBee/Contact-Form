@@ -1,119 +1,31 @@
 'use strict';
+
 (() => {
   const template = document.createElement('template');
 
   const styleStr = /* html */ `<style>
-    h2 {
-      margin-block-start: 0px;
-      margin-block-end: 0px;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      font-weight: normal;
-    }
+    h2 { margin-block-start: 0px; margin-block-end: 0px; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: normal; }
     .border { border: 1px solid #ced4da; }
     .border-radius { border-radius: 0.25rem; }
     .border-radius-right { border-top-right-radius: 0.25rem;border-bottom-right-radius: 0.25rem;}
-    .section-contact-form {
-      position: relative;
-      width: 100%;
-      justify-content: center;
-      display: block;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-    .input-style {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      width: 100%;
-      padding: 0.375rem 0.75rem;
-      font-size: inherit;
-      line-height: 1.5;
-      color: #212529;
-      background-color: #fff;
-      background-clip: padding-box;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      font-family: inherit;
-      font-weight: normal;
-    }
-    .form-select {
-      display: block;
-      padding: 0.375rem 0.75rem;
-      -moz-padding-start: calc(0.75rem - 3px);
-      font-size: 1.2rem;
-      font-family: inherit;
-      line-height: 1.5;
-      color: #212529;
-      background-color: #fff;
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right .75rem center;
-      background-size: 16px 12px;
-      border: 1px solid #ced4da;
-      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      width: 100%;
-    }
+    .section-contact-form { position: relative; width: 100%; justify-content: center; display: block; -webkit-box-sizing: border-box; box-sizing: border-box; }
+    .input-style { -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; padding: 0.375rem 0.75rem; font-size: inherit; line-height: 1.5; color: #212529; background-color: #fff; background-clip: padding-box; -webkit-appearance: none; -moz-appearance: none; appearance: none; font-family: inherit; font-weight: normal; }
+    .form-select { display: block; padding: 0.375rem 0.75rem; -moz-padding-start: calc(0.75rem - 3px); font-size: 1.2rem; font-family: inherit; line-height: 1.5; color: #212529; background-color: #fff; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right .75rem center; background-size: 16px 12px; border: 1px solid #ced4da; transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%; }
     .form-control:focus, .form-select:focus { outline: 2px solid #84d1f4; }
     .input-style:focus {outline: 2px solid #84d1f4;}
     textarea { resize: vertical;font-family: inherit;}
-    button.btn-submit {
-      display: inline-block;
-      font-weight: inherit;
-      line-height: inherit;
-      color: #212529;
-      text-align: center;
-      text-decoration: none;
-      vertical-align: middle;
-      cursor: pointer;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      border: 1px solid transparent;
-      padding: 0.375rem 0.75rem;
-      font-size: inherit;
-      font-family: inherit;
-    }
+    button.btn-submit { display: inline-block; font-weight: inherit; line-height: inherit; color: #212529; text-align: center; text-decoration: none; vertical-align: middle; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; border: 1px solid transparent; padding: 0.375rem 0.75rem; font-size: inherit; font-family: inherit; }
     button:hover { opacity: .8; }
     .margin-bottom { margin-bottom: 10px; }
-    .success-message, .error-message {
-      text-align: center;
-      color: green;
-      background-color: #ffffff;
-      width: 100%;
-      margin-top: 20px;
-      padding: 8px 0;
-    }
+    .success-message, .error-message { text-align: center; color: green; background-color: #ffffff; width: 100%; margin-top: 20px; padding: 8px 0; }
     .success-message { color: green; }
     .error-message { color: red; }
-    .invalid-mail {
-      color: red;
-      font-style: italic;
-      background-color: #ffffff;
-      padding: 4px;
-      margin-top: 4px;
-      margin-bottom: 8px;
-    }
+    .invalid-mail { color: red; font-style: italic; background-color: #ffffff; padding: 4px; margin-top: 4px; margin-bottom: 8px; }
     .display-block { display: block; }
     .display-none { display: none; }
     .icon-style { width: 20px;height: 20px; }
     .d-flex { display: flex; }
-    .icon-container {
-      border-top-left-radius: 0.25rem;
-      border-bottom-left-radius: 0.25rem;
-      text-align: center;
-      align-items: center;
-      padding: .5rem .75rem .1rem;
-      border-bottom: 1px solid #ced4da;
-      border-left: 1px solid #ced4da;
-      border-top: 1px solid #ced4da;
-      -webkit-box-align: center;
-      display: -webkit-box;
-    }
+    .icon-container { border-top-left-radius: 0.25rem; border-bottom-left-radius: 0.25rem; text-align: center; align-items: center; padding: .5rem .75rem .1rem; border-bottom: 1px solid #ced4da; border-left: 1px solid #ced4da; border-top: 1px solid #ced4da; -webkit-box-align: center; display: -webkit-box; }
     .font-weight-bold { font-weight: bold; }
   </style>`;
 
@@ -244,6 +156,7 @@
     #isIcon = false;
     selectSubject = null;
     #defaultBorder = '1px solid #ced4da';
+    receiverEmail = '';
 
     constructor() {
       super();
@@ -280,6 +193,7 @@
 
     static get observedAttributes() {
       return [
+        'receiver-email',
         'mail-path',
         'bg-color',
         'bg-border',
@@ -312,6 +226,7 @@
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
+      if (name === 'receiver-email') this.receiverEmail = newValue;
       if (name === 'mail-path') this.#mailPath = newValue;
       if (name === 'bg-color') this.#DOM.sectionContactForm.style.backgroundColor = newValue;
       if (name === 'bg-border') this.#DOM.sectionContactForm.style.border = newValue;
@@ -497,6 +412,7 @@
           subject: subject,
           message: message,
           mailSignature: mailSignature,
+          receiverEmail: this.receiverEmail,
         };
 
         await fetch(this.#mailPath, {
@@ -504,8 +420,8 @@
           body: JSON.stringify(params),
         })
           .then((response) => response.json())
-          .then((response) => {
-            if (response === true) {
+          .then((res) => {
+            if (res === true) {
               this.#clearAllInputsValues();
               this.#resetINPUTS();
               this.#showInvalidMail(false);
@@ -518,7 +434,7 @@
           })
           .catch((error) => {
             this.#showErrorMessage(true);
-            console.log(error);
+            console.log('#sendMail()', error);
           });
       }
     }
